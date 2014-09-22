@@ -1,0 +1,4 @@
+teleMessaging
+=============
+
+Telecom Messaging API
