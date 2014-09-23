@@ -25,11 +25,15 @@
     },
     "autoload": {
         "psr-4": {
-            "TelcoMsg\\": "src/",
-            "TelcoMsgTest\\": "tests/"
+            "TelcoMsg\\": "src/"
         },
-	"classmap": [
-	    "./Module.php"
-	]
+        "classmap": [
+            "./Module.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TelcoMsgTest\\": "tests/"
+        }
     }
 }
