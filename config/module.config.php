@@ -24,4 +24,8 @@
  * THE SOFTWARE.
  */
 
-return [];
+return [
+    'telcomsg' => [
+        
+    ]
+];

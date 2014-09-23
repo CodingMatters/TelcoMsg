@@ -24,4 +24,16 @@
  * THE SOFTWARE.
  */
 
-return [];
+return [
+    'abstract_factories' => [],
+    
+    'aliases' => [],
+    
+    'factories' => [],
+    
+    'invokables' => [],
+    
+    'services' => [],
+    
+    'shared' => []
+];

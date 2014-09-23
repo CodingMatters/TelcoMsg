@@ -24,4 +24,13 @@
  * THE SOFTWARE.
  */
 
-return [];
+return [
+    'console' => [],
+    'router' => [
+        'routes' => [
+            'msg-inbox' => [
+                
+            ]
+        ]
+    ]
+];
