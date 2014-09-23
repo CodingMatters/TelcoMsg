@@ -24,9 +24,12 @@
         "zendframework/zendframework": "~2.3"
     },
     "autoload": {
-        "psr-0": {
-            "TelcoMsg\\": "src/TelcoMsg/",
-            "TelcoMsgTest\\": "tests/TelcoMsgTest/"
+        "psr-4": {
+            "TelcoMsg\\": "src/",
+            "TelcoMsgTest\\": "tests/"
         }
+	"classmap": {
+	    "./Module.php"
+	}
     }
 }
