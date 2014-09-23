@@ -125,7 +125,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
-     * @test
+     * 
      * @dataProvider getHttpRoutesConfigKeys
      */
     public function validateHttpRoutesConfigKeyOptions($key)
