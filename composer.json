@@ -27,7 +27,7 @@
         "psr-4": {
             "TelcoMsg\\": "src/",
             "TelcoMsgTest\\": "tests/"
-        }
+        },
 	"classmap": {
 	    "./Module.php"
 	}
