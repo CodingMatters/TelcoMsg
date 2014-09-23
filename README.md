@@ -1,4 +1,2 @@
-teleMessaging
+Telecom messaging service API 
 =============
-
-Telecom Messaging API
