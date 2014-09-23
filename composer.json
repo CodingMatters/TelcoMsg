@@ -28,8 +28,8 @@
             "TelcoMsg\\": "src/",
             "TelcoMsgTest\\": "tests/"
         },
-	"classmap": {
+	"classmap": [
 	    "./Module.php"
-	}
+	]
     }
 }
