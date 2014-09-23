@@ -18,10 +18,7 @@
     
     <filter>
         <whitelist>
-            <directory suffix=".php">./config/</directory>            
-        </whitelist>
-        <whitelist>
-            <directory suffix=".php">./src/</directory>
+            <directory suffix=".php">./src/TelcoMsg/</directory>
         </whitelist>
     </filter>
 </phpunit>
