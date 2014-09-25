@@ -26,12 +26,37 @@
 
 namespace TelcoMsg\Controller;
 
+use Zend\Mvc\Controller\AbstractActionController;
+
 /**
  * TelcoMsg\Controller\InboxController
  *
  * @package TelcoMsg\Controller
  */
-class InboxController
+class InboxController extends AbstractActionController
 {
+    public function indexAction()
+    {
+        
+    }
     
+    public function viewAllMessages()
+    {
+        
+    }
+    
+    public function viewMessage()
+    {
+        
+    }
+    
+    public function readAllMessages()
+    {
+        
+    }
+    
+    public function readMessage()
+    {
+        
+    }
 }

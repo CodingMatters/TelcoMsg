@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TelcoMsg\\": "src/"
+            "TelcoMsg\\": "src/TelcoMsg/"
         },
         "classmap": [
             "./Module.php"
@@ -33,7 +33,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "TelcoMsgTest\\": "tests/"
+            "TelcoMsgTest\\": "tests/TelcoMsgTest/"
         }
     }
 }

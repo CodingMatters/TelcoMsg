@@ -26,12 +26,22 @@
 
 namespace TelcoMsg\Controller;
 
+use Zend\Mvc\Controller\AbstractActionController;
+
 /**
  * TelcoMsg\Controller\MessageController
  *
  * @package TelcoMsg\Controller
  */
-class MessageController
+class MessageController extends AbstractActionController
 {
+    public function sendAction($recipients = [], $message)
+    {
+        return ['responses' => ['code'=> '401', 'message' => 'Request denied']];
+    }
     
+    public function viewSentMessageAction()
+    {
+        
+    }
 }

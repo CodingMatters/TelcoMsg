@@ -24,13 +24,42 @@
  * THE SOFTWARE.
  */
 
-return [
-    'telcomsg' => [
-        'globe' => [
-            'app_id' => '12345',
-            'organization' => 'www.mycompany.com',
-            'text_id' => 'txtuser',
-            'password' => 'hashkey'
-        ]
-    ]
-];
+namespace TelcoMsgTest\Controller;
+
+/**
+ * TelcoMsgTest\Controller\MessageControllerTest
+ *
+ * @package TelcoMsgTest\Controller
+ */
+class MessageControllerTest extends \PHPUnit_Framework_TestCase
+{
+    protected $controller;
+    
+    public function setUp()
+    {
+        $this->controller = new \TelcoMsg\Controller\MessageController();
+    }
+    
+    /**
+     * @test
+     */
+    public function cannotSendMessageWith401ResponseCode()
+    {
+        $mock = $this->getMockBuilder("TelcoMsg\Controller\MessageController")
+                ->disableOriginalConstructor()->getMock();
+        
+        $mock->expects($this->any())
+                ->method('sendAction')
+                ->will($this->returnValue(['response'=> ['code'=> '401', 'message'=> 'Request denied.']]));
+        
+        $result = $mock->sendAction(['09173052588'], "test message");
+        
+        $this->assertArrayHasKey(
+                'response',
+                $result,
+                "Missing key 'response' in TelcoMsg\Controller\MessageController::send() action"
+        );
+        
+        $this->assertEquals($result['response']['code'], "401", "Something is wrong");
+    }
+}
