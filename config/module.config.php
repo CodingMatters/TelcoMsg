@@ -24,4 +24,13 @@
  * THE SOFTWARE.
  */
 
-return [];
+return [
+    'telcomsg' => [
+        'globe' => [
+            'app_id' => '12345',
+            'organization' => 'www.mycompany.com',
+            'text_id' => 'txtuser',
+            'password' => 'hashkey'
+        ]
+    ]
+];

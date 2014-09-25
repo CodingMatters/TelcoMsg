@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="Bootstrap.php">
     <logging>
-        <log type="coverage-html"  target="build/coverage" title="TelcoMsg"
+        <log type="coverage-html"  target="build/coverage" title="TelcoMsgTest"
         charset="UTF-8" yui="true" highlight="true"
         lowUpperBound="35" highLowerBound="true" />
         <log type="coverage-clover" target="build/logs/clover.xml" />
@@ -12,14 +12,13 @@
 
     <testsuites>
         <testsuite name="unit">
-            <directory>./test/TelcoMsgTest/</directory>
+            <directory>./tests/TelcoMsgTest/</directory>
         </testsuite>
     </testsuites>
     
     <filter>
         <whitelist>
-            <directory suffix=".php">./config/</directory>
-            <directory suffix=".php">./src/</directory>
+            <directory suffix=".php">./src/TelcoMsg/</directory>
         </whitelist>
     </filter>
 </phpunit>
