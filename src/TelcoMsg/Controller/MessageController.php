@@ -27,6 +27,7 @@
 namespace TelcoMsg\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
 
 /**
  * TelcoMsg\Controller\MessageController
@@ -35,13 +36,51 @@ use Zend\Mvc\Controller\AbstractActionController;
  */
 class MessageController extends AbstractActionController
 {
-    public function sendAction($recipients = [], $message)
-    {
-        return ['responses' => ['code'=> '401', 'message' => 'Request denied']];
-    }
+    protected $messages = [
+                [
+                    'id'=> "213",
+                    'details' => [
+                        'contact_number'=> "09170000000",
+                        'message'=> "Inbox text message. Lorem ipsum dolor myatay aki",
+                        'date_received'=> "2014-03-20 5:13:32",
+                        'sender_name' => "Juan Dela Cruz"
+                    ]
+                ],
+                [
+                    'id'=> "231",
+                    'details' => [
+                        'contact_number'=> "09170000001",
+                        'message'=> "Hi there. This is my first time.",
+                        'date_received'=> "2014-03-20 5:13:32",
+                        'sender_name' => "Juan Tamad"
+                    ]
+                ],
+            ];
     
-    public function viewSentMessageAction()
+    public function newAction()
     {
         
     }
+    
+    public function viewAction()
+    {
+        $id = $this->params()->fromRoute('id');
+        
+        //USE Find by ID service
+        foreach ($this->messages as $message) {
+            if ($id == $message['id']) {
+                return new ViewModel(['sms'=> $message['details']]);
+            }
+        }
+    }
+    
+//    public function sendAction($recipients = [], $message)
+//    {
+//        return ['responses' => ['code'=> '401', 'message' => 'Request denied']];
+//    }
+//    
+//    public function viewSentAction()
+//    {
+//        
+//    }
 }

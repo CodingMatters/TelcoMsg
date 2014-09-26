@@ -1,0 +1,28 @@
+<?php 
+    $this->headTitle('Phone');
+//    $this->headMeta()->appendName('keywords', "zend framework, zend, angularJS, web framework, cms, phone, content management system, users, user admin, module, modular, zend module");
+?>
+
+<div class="container-fluid">
+    <div class="form-phone">
+        <div class="form-phone-header text-center">
+            <h3>Phone Demo</h3>
+        </div>
+        <div class="btn-toolbar text-center">
+            <div class="form-horizontal">
+                <button type="button" class="btn btn-block btn-default btn-link" 
+                        onclick="location.href='<?php echo $this->url('phone/inbox') ?>'">
+                    Inbox
+                </button>
+                <button type="button" class="btn btn-block btn-default btn-link" 
+                        onclick="location.href='<?php echo $this->url('phone/message', ['action'=> 'new']) ?>'">
+                    Create Message
+                </button>
+<!--                <button type="button" class="btn btn-block btn-default btn-link" 
+                        onclick="location.href='<?php echo $this->url('phone/inbox') ?>'">
+                    Sent Items
+                </button>-->
+            </div>
+        </div>
+    </div>
+</div>
