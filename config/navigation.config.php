@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2014, Gab Amba <gamba@gabbydgab.com>.
+ * Copyright (c) 2014, contributors of Coding Matters.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,25 +25,13 @@
  */
 
 return [
-    'view_manager'  => [
-        'display_not_found_reason'  => true,
-        'display_exceptions'        => true,
-        'doctype'                   => 'HTML5',
-        'not_found_template'        => 'error/404',
-        'exception_template'        => 'error/index',
-        'template_map'              => [
-            'phone-layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'telco-msg/phone/index' => __DIR__ . '/../view/telco-msg/phone/index.phtml',
-            'telco-msg/phone/new-message' => __DIR__ . '/../view/telco-msg/phone/new-message.phtml'
-        ],
-        'template_path_stack'       => [
-            'telcomsg'   => __DIR__ . '/../view'
-        ],
-    ],
-    'strategies' => [
-        'ViewJsonStrategy'
-    ],
-    'module_layouts' => [
-        'TelcoMsg' => 'layout/layout'
+    'navigation' => [
+        'default' => [            
+            'phone' => [
+                'label' => 'Phone',
+                'route' => 'phone',
+                'icon' => 'fa fa-mobile-phone'
+            ]
+        ]
     ]
 ];

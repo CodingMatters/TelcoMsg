@@ -1,0 +1,43 @@
+<?php 
+    $this->headTitle('Phone - Inbox');
+//    $this->headMeta()->appendName('keywords', "zend framework, zend, angularJS, web framework, cms, phone, content management system, users, user admin, module, modular, zend module");
+?>
+
+<div class="container-fluid">
+    <div class="form-phone">
+        <div class="navbar navbar-btn">
+            <h3>Messages</h3>
+            <div class="navbar-left">
+                <h4> 
+                    <small>
+                        <a href="<?php echo $this->url('phone'); ?>"><i class="fa fa-backward"> Back</i></a>                   
+                    </small>
+                </h4>
+            </div>
+            <div class="navbar-right">
+                <h4>
+                    <small>
+                        <a href="<?php echo $this->url('phone/message', ['action'=> 'new']); ?>"><i class="fa fa-plus"> Message</i></a>
+                    </small>
+                </h4>
+            </div>            
+        </div>
+        <div class="row-fluid">
+            <table class="table table-condensed table-bordered table-striped table-responsive table-hover">
+                <tbody>
+                    <?php foreach($this->messages as $message) : ?>
+                        <tr>
+                            <td><?php echo $message['contact_number'];?></td>
+                            <td>
+                                <a href="<?php echo $this->url('phone/message', ['action'=>'view', 'id'=> $message['id']]);?>">
+                                    <?php echo $message['short_message'];?>
+                                </a>
+                            </td>
+                            <td><?php echo $message['date_received'];?></td>
+                        </tr>    
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

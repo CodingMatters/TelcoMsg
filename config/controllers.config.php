@@ -31,5 +31,8 @@ return [
     
     'factories' => [],
     
-    'invokables' => []
+    'invokables' => [
+        'TelcoMsg\Controller\Phone' => 'TelcoMsg\Controller\PhoneController',
+        'TelcoMsg\Controller\Message' => 'TelcoMsg\Controller\MessageController'
+    ]
 ];

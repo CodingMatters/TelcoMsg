@@ -25,5 +25,79 @@
  */
 
 return [
-    
+    'console' => [],
+    'router' => [
+        'routes' => [
+            'phone' => [
+                'type' => 'Literal',
+                'options' => [
+                    'route' => '/phone',
+                    'defaults' => [
+                        'controller' => 'TelcoMsg\Controller\Phone',
+                        'action' => 'index'
+                    ]
+                ],
+                'may_terminate' => true,
+                'child_routes' => [
+                    'inbox' => [
+                        'type' => 'Literal',
+                        'options' => [
+                            'route' => "/inbox",
+                            'defaults' => [
+                                'controller' => 'TelcoMsg\Controller\Phone',
+                                'action' => 'inbox'
+                            ]
+                        ]
+                    ],
+                    'message' => [
+                        'type' => 'segment',
+                        'options' => [
+                            'route' => "/message[/:action][/:id]",
+                            'constraints' => [
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => "[0-9]+"
+                            ],
+                            'defaults' => [
+                                'controller' => 'TelcoMsg\Controller\Message',
+                                'action' => 'index'
+                            ]
+                        ]
+                    ],
+//                    'new-message' => [
+//                        'type' => 'Literal',
+//                        'options' => [
+//                            'route' => "/message/new",
+//                            'defaults' => [
+//                                'controller' => 'TelcoMsg\Controller\Phone',
+//                                'action' => 'new-message'
+//                            ]
+//                        ]
+//                    ],
+//                    'view-message' => [
+//                        'type' => 'Segment',
+//                        'options' => [
+//                            'route' => "/message[/:hash]",
+//                            'defaults' => [
+//                                'controller' => 'TelcoMsg\Controller\Phone',
+//                                'action' => 'new-message'
+//                            ]
+//                        ]
+//                    ],
+                    'reply' => [
+                        'type' => 'Literal',
+                        'options' => [
+                            'route' => "/reply-to[/:number]",
+                            'constraints' => [                                
+                                'number' => "[0-9]+"
+                            ],
+                            'defaults' => [
+                                'controller' => 'TelcoMsg\Controller\Phone',
+                                'action' => 'reply-to'
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
 ];
